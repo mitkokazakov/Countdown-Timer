@@ -7,7 +7,7 @@ function App() {
 
   return (
 
-    <div className=" h-screen bg-[#343650]">
+    <div className=" min-h-screen w-full bg-[#1e1f29] font-RedHat ">
       
       <Wrapper></Wrapper>
     </div>
