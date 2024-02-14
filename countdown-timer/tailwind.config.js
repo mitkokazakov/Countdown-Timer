@@ -15,8 +15,8 @@ module.exports = {
         }
       },
       animation: {
-        'flipDown': 'flipDown 3000ms ease-in',
-        'flipUp': 'flipUp 3000ms ease-out 3000ms',
+        'flipDown': 'flipDown 200ms ease-in',
+        'flipUp': 'flipUp 200ms ease-out 200ms',
       }
     },
   },
