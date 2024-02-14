@@ -13,9 +13,9 @@ const Wrapper = () => {
   console.log('Hi from wrapper');
 
   return (
-    <div className=' min-h-screen w-full flex flex-col justify-between items-center relative pt-[100px] md:pt-[150px]' style={style}>
+    <div className=' min-h-screen w-full flex flex-col justify-start items-center relative pt-[100px] md:pt-[50px]' style={style}>
 
-      <div className='w-full flex flex-col justify-center items-center gap-28'>
+      <div className='w-full flex flex-col justify-center items-center gap-24'>
 
         <h1 className=' text-white font-bold text-xl tracking-[4px]'>WE ARE LAUNCHING SOON</h1>
 

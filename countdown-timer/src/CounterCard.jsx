@@ -17,7 +17,7 @@ export const CounterCard = ({ name, timeValue }) => {
   const bottomFlipContent = useRef();
   const bottomFlip = useRef();
 
-//   console.log(timeValue);
+  //   console.log(timeValue);
 
   useEffect(() => {
 
@@ -25,11 +25,14 @@ export const CounterCard = ({ name, timeValue }) => {
 
     let flag = false;
 
-    if(!flag){
-        setN(timeValue);
+    if (!flag) {
+      setN(timeValue);
+
+      topFlip.current.classList.add("animate-flipDown");
+      bottomFlip.current.classList.add("animate-flipUp");
     }
 
-    
+
 
     // topContent.textContent = timeValue;
     // topFlipContent.textContent = timeValue;
@@ -37,8 +40,7 @@ export const CounterCard = ({ name, timeValue }) => {
 
     // console.log(topContent.textContent);
 
-    topFlip.current.classList.add("animate-flipDown");
-    bottomFlip.current.classList.add("animate-flipUp");
+
 
     // topFlip.addEventListener("animationstart", () => {
     //   topFlipContent.textContent = timeValue;
@@ -63,9 +65,9 @@ export const CounterCard = ({ name, timeValue }) => {
 
 
     return () => {
-        flag = true;
+      flag = true;
     }
-    
+
   }, [timeValue]);
 
   function TopFlipStartAnimation() {
@@ -103,7 +105,7 @@ export const CounterCard = ({ name, timeValue }) => {
     <div className="flex flex-col justify-center items-center gap-7">
       <div className=" relative w-32 h-32 shadow-[0px_10px_5px_0px_rgba(0,0,0,0.5)]">
         <div
-          className=" bg-[#2c2c44] w-full h-1/2 overflow-hidden text-[70px] font-extrabold absolute top-0 left-0 rounded-t-md"
+          className=" bg-[#2c2c44] w-full h-1/2 overflow-hidden text-[70px] font-extrabold absolute top-[-1px] left-0 rounded-t-md "
           id="top"
         >
           <p
@@ -115,7 +117,7 @@ export const CounterCard = ({ name, timeValue }) => {
         </div>
 
         <div
-          className=" bg-[#2c2c44] w-full h-1/2 overflow-hidden text-[70px] font-extrabold absolute top-0 left-0 origin-bottom rounded-t-md"
+          className=" bg-[#2c2c44] w-full h-1/2 overflow-hidden text-[70px] font-extrabold absolute top-[-1px] left-0 origin-bottom rounded-t-md "
           id="flip-top"
           ref={topFlip}
           onAnimationStart={TopFlipStartAnimation}
