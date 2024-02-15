@@ -108,6 +108,7 @@ export const CounterCard = ({ name, timeValue }) => {
         <div className=" w-2.5 h-2.5 absolute bg-black rounded-full z-20 top-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
 
         <div className=" w-2.5 h-2.5 absolute bg-black rounded-full z-20 top-[50%] right-0 translate-x-[50%] translate-y-[-50%]"></div>
+        
 
         <div
           className=" bg-[#2c2c44] w-full h-1/2 overflow-hidden text-[70px] font-extrabold absolute top-[-1px] left-0 rounded-t-md "
@@ -120,6 +121,8 @@ export const CounterCard = ({ name, timeValue }) => {
             {topP}
           </p>
         </div>
+
+
 
         <div
           className=" bg-[#2c2c44] w-full h-1/2 overflow-hidden text-[70px] font-extrabold absolute top-[-1px] left-0 origin-bottom rounded-t-md "
@@ -136,6 +139,8 @@ export const CounterCard = ({ name, timeValue }) => {
           </p>
         </div>
 
+
+
         <div
           className=" bg-[#34364f] w-full h-1/2 overflow-hidden text-[70px] font-extrabold absolute bottom-0 left-0 rounded-b-md"
           id="bottom"
@@ -147,6 +152,8 @@ export const CounterCard = ({ name, timeValue }) => {
             {bottomP}
           </p>
         </div>
+
+
 
         <div
           className=" bg-[#34364f] w-full h-1/2 overflow-hidden text-[70px] font-extrabold absolute bottom-0 left-0 origin-top rounded-b-md"
@@ -162,6 +169,8 @@ export const CounterCard = ({ name, timeValue }) => {
             {bottomFlipP}
           </p>
         </div>
+
+
       </div>
 
       <p className=" text-[#8486a9] tracking-[5px]">{name}</p>
