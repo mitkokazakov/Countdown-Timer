@@ -70,16 +70,11 @@ export const Timer = () => {
           return <CounterCard key={v} name={v} timeValue={obj[v]} />;
         })} */}
 
-      <CounterCard  name="DAYS" timeValue={obj["DAYS"]} />
-
-      <CounterCard  name="DAYS" timeValue={obj["HOURS"]} />
-
-      <CounterCard name="DAYS" timeValue={obj["MINUTES"]} />
-
-      <CounterCard name="DAYS" timeValue={obj["SECONDS"]} />
-
-
-
+        {
+          values.map((v) => {
+            return <CounterCard key={v} name={v} timeValue={obj[v]} />;
+          }) 
+        }
 
     </div>
   );

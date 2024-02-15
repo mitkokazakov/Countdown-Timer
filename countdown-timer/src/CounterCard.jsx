@@ -103,7 +103,12 @@ export const CounterCard = ({ name, timeValue }) => {
 
   return (
     <div className="flex flex-col justify-center items-center gap-7">
-      <div className=" relative w-32 h-32 shadow-[0px_10px_5px_0px_rgba(0,0,0,0.5)]">
+      <div className=" relative overflow-hidden w-32 h-32 shadow-[0px_10px_5px_0px_rgba(0,0,0,0.5)]">
+
+        <div className=" w-2.5 h-2.5 absolute bg-black rounded-full z-20 top-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
+
+        <div className=" w-2.5 h-2.5 absolute bg-black rounded-full z-20 top-[50%] right-0 translate-x-[50%] translate-y-[-50%]"></div>
+
         <div
           className=" bg-[#2c2c44] w-full h-1/2 overflow-hidden text-[70px] font-extrabold absolute top-[-1px] left-0 rounded-t-md "
           id="top"
