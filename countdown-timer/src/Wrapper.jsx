@@ -17,7 +17,7 @@ const Wrapper = () => {
 
       <div className='w-full flex flex-col justify-center items-center gap-24'>
 
-        <h1 className=' text-white font-bold text-xl tracking-[4px]'>WE ARE LAUNCHING SOON</h1>
+        <h1 className=' text-white font-bold text-xl tracking-[4px] w-80 md:w-96 text-center'>WE ARE LAUNCHING SOON</h1>
 
         <Timer />
 

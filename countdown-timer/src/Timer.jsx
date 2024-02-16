@@ -64,7 +64,7 @@ export const Timer = () => {
 
 
   return (
-    <div className="w-full flex flex-row justify-center items-center gap-10 flex-wrap">
+    <div className="w-full flex flex-row justify-around md:justify-evenly items-center ">
       {/* {seconds &&
         values.map((v) => {
           return <CounterCard key={v} name={v} timeValue={obj[v]} />;
