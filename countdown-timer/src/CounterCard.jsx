@@ -2,7 +2,6 @@ import React from "react";
 import { useRef, useState, useEffect } from "react";
 
 export const CounterCard = ({ name, timeValue }) => {
-
   const [n, setN] = useState(timeValue);
 
   const [topP, setTopP] = useState();
@@ -17,11 +16,10 @@ export const CounterCard = ({ name, timeValue }) => {
   const bottomFlipContent = useRef();
   const bottomFlip = useRef();
 
-
   useEffect(() => {
-    
-
     let flag = false;
+
+    console.log(`${timeValue}  --- ${n}`);
 
     if (!flag) {
       if (!timeValue) return;
@@ -32,34 +30,30 @@ export const CounterCard = ({ name, timeValue }) => {
       bottomFlip.current.classList.add("animate-flipUp");
     }
 
-
     return () => {
       flag = true;
     };
   }, [timeValue]);
 
   function TopFlipStartAnimation() {
-
     setTopFlipP(n);
     setTopP(n - 1);
   }
 
   function TopFlipAnimationEnd() {
-
     setTopFlipP(n - 1);
 
     topFlip.current.classList.remove("animate-flipDown");
   }
 
   function BottomFlipAnimationStart() {
-
-    setBottomFlipP(n -1);
-    setBottomP(n -1 );
+    setBottomFlipP(n - 1);
+    setBottomP(n - 1);
   }
 
   function BottomFlipAnimationEnd() {
     // setBottomFlipP(n -1);
-    setBottomP(n -1);
+    setBottomP(n - 1);
 
     bottomFlip.current.classList.remove("animate-flipUp");
   }
@@ -126,10 +120,9 @@ export const CounterCard = ({ name, timeValue }) => {
         </div>
       </div>
 
-      <p className=" text-[#8486a9] tracking-[2px] md:tracking-[5px] text-[10px] md:text-[16px] font-bold">{name}</p>
-
-      
-
+      <p className=" text-[#8486a9] tracking-[2px] md:tracking-[5px] text-[10px] md:text-[16px] font-bold">
+        {name}
+      </p>
     </div>
   );
 };

@@ -7,12 +7,12 @@ export const Timer = () => {
   let currentDay = new Date();
   let futureDay = new Date().setDate(currentDay.getDate() + 8);
 
-
-
   const [seconds, setSeconds] = useState();
   const [minutes, setMinutes] = useState();
   const [hours, setHours] = useState();
   const [days, setDays] = useState();
+
+ 
 
   let obj = {
     DAYS: days,
@@ -21,15 +21,10 @@ export const Timer = () => {
     SECONDS: seconds,
   };
 
-
-
   useEffect(() => {
     let flag = false;
 
-
     let interval = setInterval(() => {
-
-
       let now = new Date();
 
       let diff = Math.ceil(futureDay - now);
@@ -39,26 +34,18 @@ export const Timer = () => {
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
 
-      // let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      // let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      // let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      // let seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
       setSeconds(seconds);
       setMinutes(minutes);
       setHours(hours);
       setDays(days);
-      console.log(hours);
-    }, 1000);
 
-    
+    }, 1000);
 
     return () => clearInterval(interval);
     // return () => {
     //   flag = true;
     // };
   }, []);
-
 
   return (
     <div className="w-full flex flex-row justify-around md:justify-evenly items-center ">
@@ -67,12 +54,14 @@ export const Timer = () => {
           return <CounterCard key={v} name={v} timeValue={obj[v]} />;
         })} */}
 
-        {
-          values.map((v) => {
-            return <CounterCard key={v} name={v} timeValue={obj[v]} />;
-          }) 
-        }
+      {values.map((v) => {
+        return <CounterCard key={v} name={v} timeValue={obj[v]} />;
+      })}
 
+      {/* <CounterCard name={"DAYS"} timeValue={days} />;
+      <CounterCard  name={"HOURS"} timeValue={hours} />;
+      <CounterCard  name={"MINUTES"} timeValue={minutes} />;
+      <CounterCard name={"SECONDS"} timeValue={seconds} />; */}
     </div>
   );
 };
