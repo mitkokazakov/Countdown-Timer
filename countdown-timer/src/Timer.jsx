@@ -48,19 +48,16 @@ export const Timer = () => {
       setMinutes(minutes);
       setHours(hours);
       setDays(days);
-
+      console.log(hours);
     }, 1000);
 
-    console.log(seconds);
+    
 
     return () => clearInterval(interval);
     // return () => {
     //   flag = true;
     // };
   }, []);
-
-
-
 
 
   return (

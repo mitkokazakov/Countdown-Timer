@@ -10,7 +10,6 @@ const Wrapper = () => {
     backgroundImage: `url(${starsImage})`
   };
 
-  console.log('Hi from wrapper');
 
   return (
     <div className=' min-h-screen w-full flex flex-col justify-normal items-center relative pt-[50px] md:pt-[50px]' style={style}>
