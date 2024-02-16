@@ -9,6 +9,7 @@ export const CounterCard = ({ name, timeValue }) => {
   const [bottomP, setBottomP] = useState(n);
   const [bottomFlipP, setBottomFlipP] = useState(n);
 
+
   const topContent = useRef();
   const topFlip = useRef();
   const topFlipContent = useRef();
@@ -19,13 +20,11 @@ export const CounterCard = ({ name, timeValue }) => {
   useEffect(() => {
     let flag = false;
 
-    console.log(`${timeValue}  --- ${n}`);
-
     if (!flag) {
+
       if (!timeValue) return;
 
       setN(timeValue);
-
       topFlip.current.classList.add("animate-flipDown");
       bottomFlip.current.classList.add("animate-flipUp");
     }
