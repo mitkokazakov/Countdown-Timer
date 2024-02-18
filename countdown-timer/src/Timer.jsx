@@ -5,7 +5,7 @@ export const Timer = () => {
   let values = ["DAYS", "HOURS", "MINUTES", "SECONDS"];
 
   let currentDay = new Date();
-  let futureDay = new Date().setDate(currentDay.getDate() + 8);
+  let futureDay = new Date().setDate(currentDay.getDate() + 9);
 
   const [seconds, setSeconds] = useState();
   const [minutes, setMinutes] = useState();
@@ -22,7 +22,6 @@ export const Timer = () => {
   };
 
   useEffect(() => {
-    let flag = false;
 
     let interval = setInterval(() => {
       let now = new Date();
@@ -38,13 +37,9 @@ export const Timer = () => {
       setMinutes(minutes);
       setHours(hours);
       setDays(days);
-
     }, 1000);
 
     return () => clearInterval(interval);
-    // return () => {
-    //   flag = true;
-    // };
   }, []);
 
   return (
@@ -54,14 +49,15 @@ export const Timer = () => {
           return <CounterCard key={v} name={v} timeValue={obj[v]} />;
         })} */}
 
-      {values.map((v) => {
+      {/* {values.map((v) => {
         return <CounterCard key={v} name={v} timeValue={obj[v]} />;
-      })}
+      })} */}
 
-      {/* <CounterCard name={"DAYS"} timeValue={days} />;
-      <CounterCard  name={"HOURS"} timeValue={hours} />;
-      <CounterCard  name={"MINUTES"} timeValue={minutes} />;
-      <CounterCard name={"SECONDS"} timeValue={seconds} />; */}
+      <CounterCard name={"DAYS"} timeValue={days} def={8}/>;
+      <CounterCard  name={"HOURS"} timeValue={hours} def={23}/>;
+      <CounterCard  name={"MINUTES"} timeValue={minutes} def={59}/>;
+      <CounterCard name={"SECONDS"} timeValue={seconds} def={59}/>;
+
     </div>
   );
 };

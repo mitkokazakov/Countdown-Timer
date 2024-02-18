@@ -1,13 +1,13 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
 
-export const CounterCard = ({ name, timeValue }) => {
-  const [n, setN] = useState(timeValue);
+export const CounterCard = ({ name, timeValue, def }) => {
+  //const [n, setN] = useState(timeValue);
 
   const [topP, setTopP] = useState();
-  const [topFlipP, setTopFlipP] = useState(n);
-  const [bottomP, setBottomP] = useState(n);
-  const [bottomFlipP, setBottomFlipP] = useState(n);
+  const [topFlipP, setTopFlipP] = useState(timeValue);
+  const [bottomP, setBottomP] = useState(timeValue);
+  const [bottomFlipP, setBottomFlipP] = useState(timeValue);
 
 
   const topContent = useRef();
@@ -24,9 +24,44 @@ export const CounterCard = ({ name, timeValue }) => {
 
       if (!timeValue) return;
 
-      setN(timeValue);
-      topFlip.current.classList.add("animate-flipDown");
-      bottomFlip.current.classList.add("animate-flipUp");
+      //setN(timeValue);
+
+      // if (name == 'DAYS' && !isFirstLoad) {
+      //   console.log(`${defaultDays} --- ${timeValue} current`);
+      // }
+
+      if (name == 'DAYS') {
+        setTopFlipP(timeValue);
+        setBottomP(timeValue);
+        setBottomFlipP(timeValue);
+      }
+      else if (name == 'HOURS') {
+        setTopFlipP(timeValue);
+        setBottomP(timeValue);
+        setBottomFlipP(timeValue);
+      }
+      else if(name == 'MINUTES'){
+        setTopFlipP(timeValue);
+        setBottomP(timeValue);
+        setBottomFlipP(timeValue);
+      }
+      else {
+        setTopFlipP(timeValue);
+        setBottomP(timeValue);
+        setBottomFlipP(timeValue);
+        topFlip.current.classList.add("animate-flipDown");
+        bottomFlip.current.classList.add("animate-flipUp");
+      }
+
+      if (name == 'MINUTES' && timeValue != def) {
+        topFlip.current.classList.add("animate-flipDown");
+        bottomFlip.current.classList.add("animate-flipUp");
+      }
+
+      // topFlip.current.classList.add("animate-flipDown");
+      // bottomFlip.current.classList.add("animate-flipUp");
+
+
     }
 
     return () => {
@@ -35,24 +70,24 @@ export const CounterCard = ({ name, timeValue }) => {
   }, [timeValue]);
 
   function TopFlipStartAnimation() {
-    setTopFlipP(n);
-    setTopP(n - 1);
+    setTopFlipP(timeValue);
+    setTopP(timeValue - 1);
   }
 
   function TopFlipAnimationEnd() {
-    setTopFlipP(n - 1);
+    setTopFlipP(timeValue - 1);
 
     topFlip.current.classList.remove("animate-flipDown");
   }
 
   function BottomFlipAnimationStart() {
-    setBottomFlipP(n - 1);
-    setBottomP(n - 1);
+    setBottomFlipP(timeValue - 1);
+    setBottomP(timeValue - 1);
   }
 
   function BottomFlipAnimationEnd() {
     // setBottomFlipP(n -1);
-    setBottomP(n - 1);
+    setBottomP(timeValue - 1);
 
     bottomFlip.current.classList.remove("animate-flipUp");
   }
