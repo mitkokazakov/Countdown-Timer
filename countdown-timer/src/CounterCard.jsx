@@ -26,25 +26,27 @@ export const CounterCard = ({ name, timeValue, def }) => {
 
       //setN(timeValue);
 
-      // if (name == 'DAYS' && !isFirstLoad) {
-      //   console.log(`${defaultDays} --- ${timeValue} current`);
-      // }
+      if (name == 'DAYS' && timeValue != def) {
+        topFlip.current.classList.add("animate-flipDown");
+        bottomFlip.current.classList.add("animate-flipUp");
+      }
+      else if(name == 'HOURS' && timeValue != def){
+        topFlip.current.classList.add("animate-flipDown");
+        bottomFlip.current.classList.add("animate-flipUp");
+      }
+      else if(name == 'MINUTES' && timeValue != def){
+        topFlip.current.classList.add("animate-flipDown");
+        bottomFlip.current.classList.add("animate-flipUp");
+      }
 
-      if (name == 'DAYS') {
+
+
+      if (name != 'SECONDS') {
         setTopFlipP(timeValue);
         setBottomP(timeValue);
         setBottomFlipP(timeValue);
       }
-      else if (name == 'HOURS') {
-        setTopFlipP(timeValue);
-        setBottomP(timeValue);
-        setBottomFlipP(timeValue);
-      }
-      else if(name == 'MINUTES'){
-        setTopFlipP(timeValue);
-        setBottomP(timeValue);
-        setBottomFlipP(timeValue);
-      }
+      
       else {
         setTopFlipP(timeValue);
         setBottomP(timeValue);
@@ -53,10 +55,7 @@ export const CounterCard = ({ name, timeValue, def }) => {
         bottomFlip.current.classList.add("animate-flipUp");
       }
 
-      if (name == 'MINUTES' && timeValue != def) {
-        topFlip.current.classList.add("animate-flipDown");
-        bottomFlip.current.classList.add("animate-flipUp");
-      }
+      
 
       // topFlip.current.classList.add("animate-flipDown");
       // bottomFlip.current.classList.add("animate-flipUp");
